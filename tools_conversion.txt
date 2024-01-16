@@ -1,0 +1,79 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 2 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: third-party/deep_sort/tools/generate_detections.py
+--------------------------------------------------------------------------------
+third-party/deep_sort/tools/generate_detections.py:180:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'third-party/deep_sort/tools/'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'third-party/deep_sort/tools/freeze_model.py'
+ outputting to 'third-party/deep_sort/tools_v2/freeze_model.py'
+--------------------------------------------------------------------------------
+
+9:16: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+15:28: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+15:28: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+23:12: INFO: tf.summary.histogram requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+23:12: INFO: Renamed 'tf.summary.histogram' to 'tf.compat.v1.summary.histogram'
+45:28: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+45:28: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+46:25: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+46:25: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+60:8: INFO: tf.summary.histogram requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+60:8: INFO: Renamed 'tf.summary.histogram' to 'tf.compat.v1.summary.histogram'
+73:39: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+73:39: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+74:36: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+74:36: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+90:23: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+90:23: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+91:21: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+91:21: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+92:23: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+93:21: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+93:21: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+94:19: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+94:19: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+95:21: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+98:40: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+197:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+198:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+208:16: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+211:27: INFO: Renamed 'tf.graph_util.convert_variables_to_constants' to 'tf.compat.v1.graph_util.convert_variables_to_constants'
+212:21: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+214:13: INFO: Renamed 'tf.gfile.GFile' to 'tf.io.gfile.GFile'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'third-party/deep_sort/tools/generate_detections.py'
+ outputting to 'third-party/deep_sort/tools_v2/generate_detections.py'
+--------------------------------------------------------------------------------
+
+75:23: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+76:13: INFO: Renamed 'tf.gfile.GFile' to 'tf.io.gfile.GFile'
+77:24: INFO: Renamed 'tf.GraphDef' to 'tf.compat.v1.GraphDef'
+80:25: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+82:26: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+180:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
